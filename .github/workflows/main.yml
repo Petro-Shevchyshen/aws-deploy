@@ -25,6 +25,9 @@ jobs:
       - name: Build static files
         run: npm run build
 
+      - name: Check if build exists before upload
+        run: ls -la build
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -46,7 +49,7 @@ jobs:
           name: build-artifacts
           path: build
 
-      - name: Check if build exists
+      - name: Check if build exists after download
         run: ls -la build
 
       - name: Configure AWS Credentials
