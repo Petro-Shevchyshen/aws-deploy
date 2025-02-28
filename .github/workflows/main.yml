@@ -32,4 +32,4 @@ jobs:
           aws-region: us-west-2
 
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./build s3://test-aws-website-github --delete
+        run: aws s3 sync ./dist s3://test-aws-website-github --delete
